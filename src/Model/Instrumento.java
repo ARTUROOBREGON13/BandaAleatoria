@@ -1,4 +1,4 @@
-package Modelo;
+package Model;
 
 /**
  * @author R2D2

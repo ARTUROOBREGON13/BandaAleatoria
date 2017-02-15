@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Control;
+package Model;
 
-import Modelo.*;
+
 import java.util.ArrayList;
 
 /**
@@ -17,6 +17,13 @@ public class Banda {
 	public static final String[] Notas = { "Do", "Re", "Mi", "Fa", "Sol", "La", "Si" };
 	public static final String[] Nombres = { "Julio", "Cristiano", "Nicolas", "Tulio", "Renaldo", "Alejandro",
 			"Silvio" };
+        
+        /* Atributos */
+	private String nombreBanda;
+	private String generoBanda;
+
+	private ArrayList<Musico> ListaMusicos;
+	private ArrayList<Instrumento> ListaInstrumentos;
 
 	/* Constructor */
 
@@ -35,12 +42,7 @@ public class Banda {
 		}
 	}
 
-	/* Atributos */
-	private String nombreBanda;
-	private String generoBanda;
-
-	private ArrayList<Musico> ListaMusicos;
-	private ArrayList<Instrumento> ListaInstrumentos;
+	
 
 	/* Metodos get and set */
 	public String getNombreBanda() {

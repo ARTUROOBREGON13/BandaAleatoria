@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Control;
+package Model;
 
 /**
- * @author Estudiantes
+ * @author R2D2
  */
-public class Control {
-   public static void main(String[] args){
-       
-   } 
+public class Trompeta extends Instrumento {
+
+    public Trompeta() {
+        super();
+        setNombre("Trompeta");
+        setTipo("Vientos");
+    }
 }

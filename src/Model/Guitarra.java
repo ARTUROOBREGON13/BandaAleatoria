@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package Model;
 
 /**
+ *
  * @author R2D2
  */
-public class Violin extends Instrumento{
-    public Violin(){
+public class Guitarra extends Instrumento{
+    public Guitarra(){
         super();
-        setNombre ("Violin");
+        setNombre("Guitarra");
         setTipo("Cuerdas");
     }
 }

@@ -5,7 +5,7 @@
  */
 package Control;
 
-import Modelo.*;
+import Model.*;
 import java.util.ArrayList;
 
 /**

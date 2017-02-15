@@ -32,9 +32,13 @@ public class Banda {
 		ListaInstrumentos.add(new Violin());
 
 		// Nombre e instrumento aleatorio para cada musico
-		for (int a = 0; a > NumeroMusicos; a++) {
-			Musico musico = new Musico(Nombres[(int) Math.random() * Nombres.length]);
-			musico.setInstrumento(ListaInstrumentos.get((int) Math.random() * 5));
+		for (int a = 0; a < NumeroMusicos; a++) {
+                    /*Se tiene en cuenta la cantidad de nombres y de instrumentos, de sus respectivos arreglos,
+                    para que sean asignados aleatoriamente*/
+                        int posicion = (int) Math.ceil((Math.random()*(Nombres.length-1)));
+			Musico musico = new Musico(Nombres[posicion]);
+			musico.setInstrumento(ListaInstrumentos.get((int) Math.ceil(Math.random() * (ListaInstrumentos.size()-1))));
+                        ListaMusicos.add(musico);
 		}
 	}
 
@@ -86,7 +90,7 @@ public class Banda {
 	}
 
 	public void TocarNotaAleatoria() {
-		int a = (int) Math.random() * 7;
+		int a = (int) Math.ceil(Math.random() * (Notas.length-1));
 		int i = 1;
 		// Si el instrumento esta afinado, deberia tener la afinacion un valor
 		// de 0
@@ -98,16 +102,20 @@ public class Banda {
 	}
 
 	public void Tocar() {
-		int a = (int) Math.random() * 3;
+                //cancion aleatoria del arreglo
+		int a = (int) Math.ceil(Math.random() * (Canciones.length-1));
 		System.out.println("La banda ha tocado la cancion: " + Canciones[a]);
 	}
 
 	public void VerBanda() {
 		int i = 1;
+                //bucle dependiendo del tamaño del arreglo de ListaMusicos, extrayendo un musico a la vez y mostrando su informacion
 		for (Musico m : ListaMusicos) {
 			System.out.println(
 					"El musico " + i + " Nombre: " + m.getNombre() + " Instrumento: " + m.getInstrumento().getNombre()+"\n");
-		}
+                    i++;
+                }
 	}
 
 }
+

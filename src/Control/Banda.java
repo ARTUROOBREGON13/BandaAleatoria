@@ -87,6 +87,7 @@ public class Banda {
 		for (Musico m : ListaMusicos) {
 			m.getInstrumento().afinar();
 		}
+                System.out.println("\t La banda se ha afinado");
 	}
 
 	public void TocarNotaAleatoria() {
@@ -96,13 +97,16 @@ public class Banda {
 		// de 0
 		for (Musico m : ListaMusicos) {
 			int afinacion = m.getInstrumento().getAfinacion();
-			m.tocarNota(Notas[a + afinacion], i);
+			int pos = (a + afinacion);
+                        if(pos >= Notas.length)
+                            pos-=Notas.length;
+                        m.tocarNota(Notas[pos], i);
 			i++;
 		}
 	}
 
 	public void Tocar() {
-                //cancion aleatoria del arreglo
+                //Canción aleatoria del arreglo
 		int a = (int) Math.ceil(Math.random() * (Canciones.length-1));
 		System.out.println("La banda ha tocado la cancion: " + Canciones[a]);
 	}
